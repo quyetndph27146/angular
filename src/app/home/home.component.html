@@ -1,38 +1,18 @@
 <div class="test">
   <h3>Đây là component Home</h3>
-  <h2>Chào bạn {{ name }}</h2>
-  <input value="{{ name }}" />
-  <br />
-  <input [value]="name" title="Đây là {{ name }}" />
-  <br />
-  <input type="text" [(ngModel)]="age" />
-  <button (click)="resetName()">ResetAge</button>
-  <h2 *ngIf="age > 18">Bạn đủ tuổi trưởng thành!</h2>
-  <h2 *ngIf="age <= 18">Bạn còn trẻ lắm !</h2>
 
   <h1>Trái cây</h1>
-  <div *ngFor="let traiCay of traiCay; let i = index">
-    <li>{{ i + 1 }}.{{ traiCay }}</li>
-  </div>
-
-  <table class="table">
-    <tr>
-      <th>STT</th>
-      <th>Tên</th>
-      <th>Giá</th>
-      <th>Đại hạ giá</th>
-    </tr>
-    <tr *ngFor="let traiCay of hoaQua; let i = index">
-      <td>{{ i + 1 }}</td>
-      <td>{{ traiCay.ten | uppercase }}</td>
-      <td>
-        <span [ngClass]="{ 'so-am': traiCay.price < 0 }">
-          {{ traiCay.price | currency : "VND" : "symbol" : ".2" }}
-        </span>
-      </td>
-      <td>
-        <span>{{ traiCay.haGia | onSale | uppercase }}</span>
-      </td>
-    </tr>
-  </table>
+  Tỉnh/Thành Phố
+  <select id="city" (change)="changeCity($event)">
+    <option *ngFor="let data of vietNamData" [value]="data.city">
+      {{ data.city }}
+    </option>
+  </select>
+  <br />
+  Quận/Huyện
+  <select id="district">
+    <option *ngFor="let district of districts" [value]="district">
+      {{ district }}
+    </option>
+  </select>
 </div>

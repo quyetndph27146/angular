@@ -15,11 +15,32 @@ export class HomeComponent implements OnInit {
     { ten: 'Sầu riêng', price: 12, haGia: true },
     { ten: 'Dưa hấu', price: -3, haGia: false },
   ];
+  public districts: string[] = [];
+  public vietNamData = [
+    { city: 'Chọn thành phố', district: ['Q uận huyện'] },
+    { city: 'Hà Nội', district: ['Quốc Oai', 'Nam Từ Liêm', 'Bắc Từ Liêm'] },
+    { city: 'Hồ Chí Minh', district: ['Quận 1', 'Quận 3', 'Quận 12'] },
+  ];
   constructor() {}
 
   ngOnInit(): void {}
 
   public resetName(): void {
     this.age = 21;
+  }
+
+  public changeCity(event: any): void {
+    const city = event.target.value;
+
+    // cách 1
+    // const search = this.vietNamData.filter((data) => data.city === city);
+    // console.log('event', search);
+    // if (search && search.length > 0) {
+    //   this.districts = search[0].district;
+    // }
+
+    // cách 2
+    this.districts =
+      this.vietNamData.find((data) => data.city === city)?.district || [];
   }
 }
