@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   ];
   public districts: string[] = [];
   public vietNamData = [
-    { city: 'Chọn thành phố', district: ['Q uận huyện'] },
+    { city: 'Chọn thành phố', district: ['Quận huyện'] },
     { city: 'Hà Nội', district: ['Quốc Oai', 'Nam Từ Liêm', 'Bắc Từ Liêm'] },
     { city: 'Hồ Chí Minh', district: ['Quận 1', 'Quận 3', 'Quận 12'] },
   ];

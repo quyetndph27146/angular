@@ -1,4 +1,14 @@
 <h1>Hello World !</h1>
 <h2>Chào bạn, bạn đang học angular 12</h2>
 <h2>Chúc các bạn thành công !</h2>
-<app-home></app-home>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
